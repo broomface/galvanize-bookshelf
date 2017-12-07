@@ -6,7 +6,7 @@ const knex = require('../knex')
 const router = express.Router()
 
 router.get('/books', (req, res, next) => {
-  knex('books')
+  return knex('books')
     .orderBy('title')
     .select(
       'id',
