@@ -5,7 +5,6 @@ const knex = require('../knex')
 // eslint-disable-next-line new-cap
 const router = express.Router()
 
-// YOUR CODE HERE
 router.get('/books', (req, res, next) => {
   knex('books')
     .orderBy('title')
@@ -86,7 +85,7 @@ router.patch('/books/:id', (req, res, next) => {
       delete data[0]['cover_url']
       delete data[0]['created_at']
       delete data[0]['updated_at']
-      res.send(data[0])
+      res.status(200).send(data[0])
     })
 })
 router.delete('/books/:id', (req, res, next) => {
